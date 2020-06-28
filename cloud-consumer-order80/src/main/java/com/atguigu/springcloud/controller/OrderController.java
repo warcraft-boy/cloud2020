@@ -17,7 +17,9 @@ import org.springframework.web.client.RestTemplate;
 @RequestMapping(value = "/order")
 public class OrderController {
 
-    private static final String PAYMENT_URL = "http://localhost:8001";
+    //private static final String PAYMENT_URL = "http://localhost:8001";
+    //多个服务提供者提供服务，访问的是应用名称，而不是服务地址，因为一个应用名称下可以有多个服务地址
+    private static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE";
 
     @Autowired
     private RestTemplate restTemplate;
