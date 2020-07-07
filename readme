@@ -4,3 +4,6 @@
 如果有服务注册进去了，会显示"[services, zookeeper]",使用"ls /services"命令可以查看注册到zk的服务名称
 
 3、zk服务节点是临时的，如果服务停掉，一小段时间后，ZK会把服务干掉
+
+4、用以下命令启动consul,172.16.101.229是我的linux的ip地址
+./consul agent -dev -ui -node=consul-dev -client=172.16.101.229
