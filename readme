@@ -7,3 +7,12 @@
 
 4、用以下命令启动consul,172.16.101.229是我的linux的ip地址
 ./consul agent -dev -ui -node=consul-dev -client=172.16.101.229
+
+5、eureka,zookeeper和consul的区别？
+CAP理论：C-consistency一致性，A-available高可用，P-partition tolerance分区容错性
+AP(eureka),CP(zookeeper/consul)
+
+6、ribbon和nginx都是实现负载均衡，有什么区别？
+nginx适用于服务器端实现负载均衡，比如tomcat,jetty。将用户的请求平摊到多个服务器上，从而达到高可用。
+而ribbon是微服务RPC远程调用时实现负载均衡。
+简单来说，nginx是将外部所有用户请求负载均衡，ribbon是将内部系统微服务之间的调用实现负载均衡。
