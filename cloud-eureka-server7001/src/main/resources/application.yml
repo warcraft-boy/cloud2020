@@ -11,7 +11,8 @@ eureka:
       #设置与eureka server交互的地址查询服务和注册服务都需要依赖这个地址
       #单个eureka注册中心这样写：http://${eureka.instance.hostname}:${server.port}/eureka/
       #多个eureka注册中心要向对方注册，写法如下：
-      defaultZone: http://eureka7002.com:7002/eureka/
+#      defaultZone: http://eureka7002.com:7002/eureka/
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
   #eureka自我保护机制，默认是true，即一个服务挂掉了，注册中心不会立刻清理掉，而是选择保留，当设置为false时且有时间时，会在该时间后清理掉
 #  server:
 #    enable-self-preservation: false
