@@ -19,7 +19,7 @@ import java.util.List;
  **/
 @RestController
 @Slf4j
-@RequestMapping(value = "payment")
+@RequestMapping(value = "/payment")
 public class PaymentController {
 
     @Autowired
