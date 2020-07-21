@@ -19,7 +19,7 @@ public class PaymentService {
     }
 
     /**
-     * hystrix服务降级处理，时间为3秒，而timeout方法sleep了5秒，所以降级到paymentInfo_TimeoutHandler()方法
+     * hystrix服务降级处理，时间限定为3秒，而timeout方法sleep了5秒，所以降级到paymentInfo_TimeoutHandler()方法
      * @param id
      * @return
      */
