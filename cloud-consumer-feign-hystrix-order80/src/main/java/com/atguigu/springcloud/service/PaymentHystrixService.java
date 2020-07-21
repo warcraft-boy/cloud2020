@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.PathVariable;
  * @Date 2020/7/17
  **/
 @Component
-@FeignClient(value = "cloud-provider-hystrix-payment")
+@FeignClient(value = "cloud-provider-hystrix-payment", fallback = PaymentFallbackService.class)
+//这里fallback用法是这里调用ok()方法，会调用cloud-provider-hystrix-payment服务里面/payment/hystrix/ok/{id}这个接口，如果关掉cloud-provider-hystrix-payment服务
+//就会调用PaymentFallbackService.class方法里面的ok()方法
 public interface PaymentHystrixService {
 
     @GetMapping(value = "/payment/hystrix/ok/{id}")
