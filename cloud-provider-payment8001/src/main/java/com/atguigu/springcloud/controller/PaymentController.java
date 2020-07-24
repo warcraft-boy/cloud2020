@@ -41,7 +41,7 @@ public class PaymentController {
         }
     }
 
-    @GetMapping(value = "/query/{id}")
+    @GetMapping(value = "/get/{id}")
     public CommonResult query(@PathVariable("id") Long id){
         Payment payment = paymentService.getPaymentById(id);
         log.info("查询结果：" + payment);
