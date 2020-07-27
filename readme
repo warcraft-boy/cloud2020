@@ -20,3 +20,12 @@ nginx适用于服务器端实现负载均衡，比如tomcat,jetty。将用户的
 7、熔断机制概述
 熔断机制是应对雪崩效应的一种微服务链路保护机制，当链路的某个微服务出错不可用或者响应时间太长时，会进行服务的降级，进而熔断该节点微服务的调用，
 快速返回错误的相应信息，当检测到该节点微服务调用相应正常后，恢复调用链路。
+
+
+8、注册中心对比（CAP模型：Consistency一致性，Avaliability-可用性，Partition tolerance-分区容错性）
+注册中心                        CAP模型                       控制台管理                       社区活跃度
+Eureka                          AP                              支持                            低（2.x版本闭源）
+Zookeeper                       CP                              不支持                          中
+Consul                          CP                              支持                            高
+Nacos                           AP                              支持                            高
+注：nacos支持AP和CP模式的切换
