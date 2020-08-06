@@ -48,14 +48,14 @@ public class FlowLimitController {
     @GetMapping("/testException")
     public String testException(){
         log.info("testException 异常比例");
-        int age = 10 /0 ;
+        int age = 10 / 0 ;
         return "testException -----";
     }
 
     @GetMapping("/testExceptionCount")
     public String testExceptionCount(){
         log.info("testExceptionCount 异常数");
-        int age = 10 /0 ;
+        int age = 10 / 0 ;
         return "testExceptionCount -----";
     }
 
