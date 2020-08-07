@@ -59,14 +59,20 @@ public class FlowLimitController {
         return "testExceptionCount -----";
     }
 
+    /**
+     * 热点规则测试
+     * 此接口有两个参数，对应热点规则编辑页参数索引0，1，如果配0，表示对第一个参数进行熔断，如果第一个参数访问突破阀值，就会跳到dealTestHotKey()方法
+     * @param p1
+     * @param p2
+     * @return
+     */
     @GetMapping("/testHotKey")
     @SentinelResource(value = "testHotKey", blockHandler = "dealTestHotKey")
     public String testHotKey(@RequestParam(value = "p1", required = false) String p1,
                              @RequestParam(value = "p2", required = false) String p2){
-        int age = 10 /0;
+        //int age = 10 / 0;
         return "testHotKey -----";
     }
-
     public String dealTestHotKey(String p1, String p2, BlockException blockException){
         return "dealTestHotKey---------";
     }
